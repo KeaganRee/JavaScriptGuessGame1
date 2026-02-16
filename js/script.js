@@ -5,8 +5,6 @@ document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 //Global variables
 let randomNumber;
 let attempts = 0;
-let wins = 0;
-let losses = 0;
 
 initializeGame();
 
@@ -33,8 +31,6 @@ function initializeGame() {
     attempts = 0;
     document.querySelector("#attempts").textContent = 7;
 
-    document.querySelector("#wins").textContent = wins;
-    document.querySelector("#losses").textContent = losses;
     
 }
 
@@ -55,7 +51,6 @@ function checkGuess(){
     if(guess == randomNumber){
         feedback.textContent = "You win!";
         feedback.style.color = "darkgreen";
-        wins++;
         gameOver();
     }
     else{
@@ -64,7 +59,6 @@ function checkGuess(){
         if(attempts == 7){
             feedback.textContent = "You lose!";
             feedback.style.color = "red";
-            losses++;
             gameOver();
         }
         else if(guess > randomNumber){
